@@ -4,6 +4,8 @@ specifiers:
   '@emotion/react': ^11.10.6
   '@emotion/styled': ^11.10.6
   '@mui/material': ^5.11.10
+  '@mui/x-data-grid': ^5.17.24
+  '@types/node': ^18.14.0
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
   '@vitejs/plugin-react': ^3.1.0
@@ -17,6 +19,8 @@ dependencies:
   '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
   '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
   '@mui/material': 5.11.10_xqeqsl5kvjjtyxwyi3jhw3yuli
+  '@mui/x-data-grid': 5.17.24_fn4ukn7njhq3j6rnouvyofvwm4
+  '@types/node': 18.14.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   styled-components: 5.3.6_biqbaboplfbrettd7655fr4n2y
@@ -26,7 +30,7 @@ devDependencies:
   '@types/react-dom': 18.0.11
   '@vitejs/plugin-react': 3.1.0_vite@4.1.3
   typescript: 4.9.5
-  vite: 4.1.3
+  vite: 4.1.3_@types+node@18.14.0
 
 packages:
 
@@ -55,11 +59,11 @@ packages:
     dependencies:
       '@ampproject/remapping': 2.2.0
       '@babel/code-frame': 7.18.6
-      '@babel/generator': 7.21.0
+      '@babel/generator': 7.21.1
       '@babel/helper-compilation-targets': 7.20.7_@babel+core@7.21.0
       '@babel/helper-module-transforms': 7.21.0
       '@babel/helpers': 7.21.0
-      '@babel/parser': 7.21.0
+      '@babel/parser': 7.21.1
       '@babel/template': 7.20.7
       '@babel/traverse': 7.21.0
       '@babel/types': 7.21.0
@@ -72,8 +76,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/generator/7.21.0:
-    resolution: {integrity: sha512-z/zN3SePOtxN1/vPFdqrkuJGCD2Vx469+dSbNRD+4TF2+6e4Of5exHqAtcfL/2Nwu0RN0QsFwjyDBFwdUMzNSA==}
+  /@babel/generator/7.21.1:
+    resolution: {integrity: sha512-1lT45bAYlQhFn/BHivJs43AiW2rg3/UbLyShGfF3C0KmHvO5fSghWd5kBJy30kpRRucGzXStvnnCFniCR2kXAA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.21.0
@@ -191,8 +195,8 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
 
-  /@babel/parser/7.21.0:
-    resolution: {integrity: sha512-ONjtg4renj14A9pj3iA5T5+r5Eijxbr2eNIkMBTC74occDSsRZUpe8vowmowAjFR1imWlkD8eEmjYXiREZpGZg==}
+  /@babel/parser/7.21.1:
+    resolution: {integrity: sha512-JzhBFpkuhBNYUY7qs+wTzNmyCWUHEaAFpQQD2YfU1rPL38/L43Wvid0fFkiOCnHvsGncRZgEPyGnltABLcVDTg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
@@ -230,7 +234,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/parser': 7.21.0
+      '@babel/parser': 7.21.1
       '@babel/types': 7.21.0
 
   /@babel/traverse/7.21.0:
@@ -238,12 +242,12 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/generator': 7.21.0
+      '@babel/generator': 7.21.1
       '@babel/helper-environment-visitor': 7.18.9
       '@babel/helper-function-name': 7.21.0
       '@babel/helper-hoist-variables': 7.18.6
       '@babel/helper-split-export-declaration': 7.18.6
-      '@babel/parser': 7.21.0
+      '@babel/parser': 7.21.1
       '@babel/types': 7.21.0
       debug: 4.3.4
       globals: 11.12.0
@@ -256,12 +260,12 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/generator': 7.21.0
+      '@babel/generator': 7.21.1
       '@babel/helper-environment-visitor': 7.18.9
       '@babel/helper-function-name': 7.21.0
       '@babel/helper-hoist-variables': 7.18.6
       '@babel/helper-split-export-declaration': 7.18.6
-      '@babel/parser': 7.21.0
+      '@babel/parser': 7.21.1
       '@babel/types': 7.21.0
       debug: 4.3.4_supports-color@5.5.0
       globals: 11.12.0
@@ -790,9 +794,31 @@ packages:
       react-is: 18.2.0
     dev: false
 
+  /@mui/x-data-grid/5.17.24_fn4ukn7njhq3j6rnouvyofvwm4:
+    resolution: {integrity: sha512-2QjHlc3tEcPKatTIqQnzEvEj1+rJ33xZyOCbUXcsptjzN61DWWlWoIxXe8BW7Lp41TjqchSeUW6kBCdkJfoh8w==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.4.1
+      '@mui/system': ^5.4.1
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@mui/material': 5.11.10_xqeqsl5kvjjtyxwyi3jhw3yuli
+      '@mui/utils': 5.11.9_react@18.2.0
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      reselect: 4.1.7
+    dev: false
+
   /@popperjs/core/2.11.6:
     resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
     dev: false
+
+  /@types/node/18.14.0:
+    resolution: {integrity: sha512-5EWrvLmglK+imbCJY0+INViFWUHg1AHel1sq4ZVSfdcNqGy9Edv3UB9IIzzg+xPaUcAgZYcfVs2fBcwDeZzU0A==}
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -840,7 +866,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.0
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.1.3
+      vite: 4.1.3_@types+node@18.14.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -883,7 +909,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001457
-      electron-to-chromium: 1.4.303
+      electron-to-chromium: 1.4.304
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
     dev: true
@@ -984,8 +1010,8 @@ packages:
       csstype: 3.1.1
     dev: false
 
-  /electron-to-chromium/1.4.303:
-    resolution: {integrity: sha512-XaqiQhVsGO5ymf/Lg6XEGpv2h8b5AFqQDQ9fQckolNP2VtD2VL1pn1TIx1SSYsf0srfXVi2Sm7n/K3slJSX3ig==}
+  /electron-to-chromium/1.4.304:
+    resolution: {integrity: sha512-6c8M+ojPgDIXN2NyfGn8oHASXYnayj+gSEnGeLMKb9zjsySeVB/j7KkNAAG9yDcv8gNlhvFg5REa1N/kQU6pgA==}
     dev: true
 
   /error-ex/1.3.2:
@@ -1262,6 +1288,10 @@ packages:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
     dev: false
 
+  /reselect/4.1.7:
+    resolution: {integrity: sha512-Zu1xbUt3/OPwsXL46hvOOoQrap2azE7ZQbokq61BQfiXvhewsKDwhMeZjTX9sX0nvw1t/U5Audyn1I9P/m9z0A==}
+    dev: false
+
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
@@ -1366,7 +1396,7 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite/4.1.3:
+  /vite/4.1.3_@types+node@18.14.0:
     resolution: {integrity: sha512-0Zqo4/Fr/swSOBmbl+HAAhOjrqNwju+yTtoe4hQX9UsARdcuc9njyOdr6xU0DDnV7YP0RT6mgTTOiRtZgxfCxA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1391,6 +1421,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.14.0
       esbuild: 0.16.17
       postcss: 8.4.21
       resolve: 1.22.1
