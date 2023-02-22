@@ -1,19 +1,26 @@
 import { People } from "@/data";
 import { Person } from "@/models";
+import { addFavorites } from "@/redux";
 import { Checkbox } from "@mui/material";
-import { GridColDef, GridRenderCellParams, DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 export interface HomeInterface { }
 
 export const Home: React.FC<HomeInterface> = () => {
   const pageSize = 5;
   const [selectedPeople, setSelectedPeople] = useState<Person[]>([])
+  const dispatch = useDispatch()
 
   const findPerson = (person: Person) => !!selectedPeople.find(p => p.id === person.id)
   const filterPerson = (person: Person) => selectedPeople.filter(p => p.id !== person.id)
   const handleChange = (person: Person) => {
-    setSelectedPeople(findPerson(person) ? filterPerson(person) : [...selectedPeople, person]);
+    const filteredPeople = findPerson(person) ? filterPerson(person) : [...selectedPeople, person]
+
+    dispatch(addFavorites(filteredPeople))
+
+    setSelectedPeople(filteredPeople);
   }
   const columns: GridColDef[] = [
     {
