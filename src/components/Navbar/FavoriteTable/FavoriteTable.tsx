@@ -10,17 +10,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 export interface FavoriteTableInterface { }
 export const FavoriteTable: React.FC<FavoriteTableInterface> = () => {
     const pageSize = 5;
-    const [selectedPeople, setSelectedPeople] = useState<Person[]>([])
     const dispatch = useDispatch()
     const favoritesStore = useSelector((store: AppStore) => store.favorites)
-    const findPerson = (person: Person) => !!selectedPeople.find(p => p.id === person.id)
-    const filterPerson = (person: Person) => selectedPeople.filter(p => p.id !== person.id)
     const handleClick = (person: Person) => {
-        const filteredPeople = findPerson(person) ? filterPerson(person) : [...selectedPeople, person]
-
-        dispatch(removeFavorites(filteredPeople[0]));
-
-        setSelectedPeople(filteredPeople);
+        dispatch(removeFavorites(person));
     }
     const columns: GridColDef[] = [
         {
